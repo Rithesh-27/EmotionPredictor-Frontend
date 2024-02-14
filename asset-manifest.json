@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Emotion-Predictor-Frontend/static/css/main.cffa05df.css",
+    "main.js": "/Emotion-Predictor-Frontend/static/js/main.5c01ef10.js",
+    "index.html": "/Emotion-Predictor-Frontend/index.html",
+    "main.cffa05df.css.map": "/Emotion-Predictor-Frontend/static/css/main.cffa05df.css.map",
+    "main.5c01ef10.js.map": "/Emotion-Predictor-Frontend/static/js/main.5c01ef10.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cffa05df.css",
+    "static/js/main.5c01ef10.js"
+  ]
+}
