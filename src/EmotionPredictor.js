@@ -28,6 +28,7 @@ const EmotionPredictor = () => {
         }
         finally {
             setPredicting(false)
+            setReqError(false)
         }
     }
 
