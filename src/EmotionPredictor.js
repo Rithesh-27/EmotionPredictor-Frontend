@@ -19,8 +19,9 @@ const EmotionPredictor = () => {
         setPredicting(true)
 
         try {
+            setReqError(false)
+            setPredictedEmotion('')
             const response = await axios.post("https://emotion-predictor-backend.onrender.com//predict-emotion", {text})
-            if (response) setReqError(false)
             setPredictedEmotion(response.data.predicted_emotion)
             setPredictedScore(response.data.confidence_percentage)
         } catch (err) {
