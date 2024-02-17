@@ -8,6 +8,7 @@ const EmotionPredictor = () => {
     const [predictedEmotion, setPredictedEmotion] = useState('')
     const [predictedScore, setPredictedScore] = useState()
     const [predicting,setPredicting] = useState(false)
+    const [reqError,setReqError] = useState(false)
 
     const handleChange =(e) => {
         setText(e.target.value)
@@ -18,10 +19,11 @@ const EmotionPredictor = () => {
         setPredicting(true)
 
         try {
-            const response = await axios.post("https://emotion-predictor-backend.onrender.com//predict-emotion", {text})
+            const response = await axios.post("https://emotion-predictor-backend.onrender.com//predifafsct-emotion", {text})
             setPredictedEmotion(response.data.predicted_emotion)
             setPredictedScore(response.data.confidence_percentage)
         } catch (err) {
+            setReqError(true)
             console.error("Error predicting the emotion ",err)
         }
         finally {
@@ -59,6 +61,11 @@ const EmotionPredictor = () => {
                     <button type='submit' disabled={predicting}>Predict Emotion</button>
                 </form>
             </div>
+            {reqError && (
+                <div className='ErrorMessage'>
+                    <h2>Error occured while predicting...Please try again</h2>
+                </div>
+            )}
             {predicting ? (
                 <div>
                     <h2>Predicting Emotion...</h2>
